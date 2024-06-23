@@ -76,17 +76,18 @@ def scrape_ig(stores: List[str]):
     instagram_result.click()
     time.sleep(2)
 
-    # get store name, followers, following and posts (GET INNER TEXT)
+    # get store name, media count, followers and following
     account_numbers = driver.find_element(By.CSS_SELECTOR, 'header>section:nth-child(3)').text.split('\n')
+    follower_count = driver.find_element(By.CSS_SELECTOR, 'span[title]').get_attribute('title')
     account_details = driver.find_element(By.CSS_SELECTOR, 'header>section:nth-child(4)').text.split('\n')
 
     ig_account_info = {
-      "store": coffee,
-      "name": account_details[0],
+      "username": coffee,
+      "full_name": account_details[0],
       "category": account_details[1],
-      "published_posts": account_numbers[0],
-      "followers": account_numbers[1],
-      "following": account_numbers[2]
+      "media_count": int(account_numbers[0].split(' ')[0]),
+      "follower_count": int(follower_count.replace('.', '')),
+      "following_count": int(account_numbers[2].split(' ')[0])
     }
 
     stores_data_scrapped.append(ig_account_info)
@@ -122,7 +123,6 @@ coffee_stores = [
   #"cafeblackmamba",
   #"melbournecafe",
   #"cafelocalvillarrica",
-  #"milkstgo",
   #"domestico.cafe",
   "area.stgo"
 ]

@@ -2,3 +2,4 @@
 venv
 assets
 *.exe
+chromedriver
