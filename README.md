@@ -5,9 +5,9 @@
 ## Running locally
 
 1. Clone the repo, rename `.example.env` to `.env`, and replace your IG username and password
-2. Run `pip install -r requirements.txt` to install dependencies
-3. Run `python main.py` to run the scraper
-4. Download [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/#stable) and add it to your PATH
+2. Download [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/#stable) and add it to your PATH
+3. Run `pip install -r requirements.txt` to install dependencies
+4. Run `python main.py` to run the scraper
 
 ## How it works
 
