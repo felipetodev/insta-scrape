@@ -65,7 +65,7 @@ def scrape_ig(stores: List[str]):
     time.sleep(2)
 
     # go to the search input
-    search_input = driver.find_element(By.CSS_SELECTOR, 'input')
+    search_input = driver.find_element(By.CSS_SELECTOR, 'input[type="text"]')
     search_input.clear()
     search_input.click()
     search_input.send_keys(coffee)
